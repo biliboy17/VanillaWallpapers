@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Wallpapers | Old Money Collection</title>
+    <style>
+        :root {
+            --bg-apple: #000000;
+            --texto-claro: #f5f5f7;
+            --texto-gris: #86868b;
+            --cristal: rgba(255, 255, 255, 0.04);
+            --borde-cristal: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-apple);
+            color: var(--texto-claro);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        @keyframes scrollAnimado {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- GRID CONTAINER (21 SLOTS) --- */
+        .catalogo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 30px 100px;
+        }
+
+        /* --- GLASSMORPHISM CARD --- */
+        .tarjeta {
+            background: var(--cristal);
+            border: 1px solid var(--borde-cristal);
+            border-radius: 24px;
+            padding: 16px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .tarjeta:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .contenedor-imagen {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-color: #111;
+        }
+
+        .contenedor-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .info-producto {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 0 8px;
+        }
+
+        .info-producto h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            letter-spacing: -0.02em;
+        }
+
+        .detalles {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .resolucion {
+            color: var(--texto-gris);
+            font-size: 0.9rem;
+        }
+
+        .precio {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--texto-claro);
+        }
+
+        .boton-comprar {
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 99px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: auto;
+            transition: background-color 0.2s ease;
+        }
+
+        .boton-comprar:hover {
+            background-color: #e5e5e5;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid var(--borde-cristal);
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--texto-gris);
+            font-size: 0.85rem;
+        }
+        
+        .enlaces-legales {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .enlaces-legales a {
+            color: var(--texto-gris);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .enlaces-legales a:hover {
+            color: var(--texto-claro);
+        }
+
+        @media (max-width: 768px) {
+            .catalogo-grid { padding: 0 15px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header style="position: relative; height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; padding: 20px;">
+        
+       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;">
+            <img src="fondo-hero.jpg" alt="Hero Background" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6; pointer-events: none; user-select: none; -webkit-user-drag: none;" oncontextmenu="return false;" ondragstart="return false;">
+        </div>
+        
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent 0%, var(--bg-apple) 100%); z-index: -1;"></div>
+
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 100px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
+            <span style="color: #ffd700; font-size: 14px;">★★★★★</span>
+            <span style="font-size: 13px; font-weight: 500;">Trusted by 1,000+ aesthetic setups</span>
+        </div>
+        
+        <h1 style="font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 800; letter-spacing: -0.05em; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase;">Vanilla Wallpapers<br></h1>
+        
+        <p style="font-size: 1.2rem; color: var(--texto-gris); max-width: 600px; margin-bottom: 40px; font-weight: 400;">Elevate your digital space with thick oil painting textures and dark luxury aesthetics. Designed for Retina displays.</p>
+        
+        <a href="#catalogo" style="background: white; color: black; text-decoration: none; padding: 16px 36px; border-radius: 100px; font-weight: 700; font-size: 1.1rem; transition: transform 0.2s;">Shop the Collection</a>
+    </header>
+
+   
+    <div style="width: 100%; background-color: #111; border-top: 1px solid #222; border-bottom: 1px solid #222; overflow: hidden; padding: 15px 0; white-space: nowrap; margin-bottom: 60px;">
+        <div style="display: inline-block; animation: scrollAnimado 20s linear infinite; font-size: 0.85rem; letter-spacing: 2px; color: var(--texto-gris); text-transform: uppercase;">
+            ✦ 4K ULTRA HD RESOLUTION ✦ INSTANT DIGITAL DOWNLOAD ✦ OLD MONEY AESTHETIC ✦ SECURE STRIPE CHECKOUT ✦ PERFECT FOR MAC & IPAD ✦ NO COMPRESSION ✦
+            ✦ 4K ULTRA HD RESOLUTION ✦ INSTANT DIGITAL DOWNLOAD ✦ OLD MONEY AESTHETIC ✦ SECURE STRIPE CHECKOUT ✦ PERFECT FOR MAC & IPAD ✦ NO COMPRESSION ✦
+        </div>
+    </div>
+
+    <div id="catalogo" class="catalogo-grid">
+        
+        <!-- SLOT 1: THE BUNDLE -->
+        <article class="tarjeta" style="border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);">
+            <div class="contenedor-imagen">
+                <img src="boundle.jpg" alt="Full Impasto Collection">
+            </div>
+            <div class="info-producto">
+                <h3>The Full Collection.</h3>
+                <div class="detalles">
+                    <span class="resolucion" style="color: #fff; font-weight: bold;">20 4K Wallpapers Bundle</span>
+                    <span class="precio">14.99€</span>
+                </div>
+                <a href="#" class="boton-comprar" style="background-color: #007aff; color: white;">Save 25€ - Get the Bundle</a>
+            </div>
+        </article>
+
+        <!-- SLOT 2 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Garage.jpg" alt="Wallpaper 1">
+            </div>
+            <div class="info-producto">
+                <h3>Garage.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 3 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Tower Bridge.jpg" alt=" Wallpaper 2">
+            </div>
+            <div class="info-producto">
+                <h3>Tower Bridge.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 4 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Balcony Views.jpg" alt="Impasto Wallpaper 3">
+            </div>
+            <div class="info-producto">
+                <h3>Balcony Views.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 5 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Central Park.jpg" alt="Impasto Wallpaper 4">
+            </div>
+            <div class="info-producto">
+                <h3>Central Park.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 6 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Family Court.jpg" alt="Impasto Wallpaper 5">
+            </div>
+            <div class="info-producto">
+                <h3>Family Court.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 7 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Yacht Reunion.jpg" alt="Impasto Wallpaper 6">
+            </div>
+            <div class="info-producto">
+                <h3>Yacht Reunion.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 8 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Dream Office.jpg" alt=" Wallpaper 7">
+            </div>
+            <div class="info-producto">
+                <h3>Dream Office.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 9 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="In God We Trust.jpg" alt=" Wallpaper 8">
+            </div>
+            <div class="info-producto">
+                <h3>In God We Trust.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 10 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Coffe & Cigar.jpg" alt="Impasto Wallpaper 9">
+            </div>
+            <div class="info-producto">
+                <h3>Coffe & Cigar.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 11 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="f40 Villa.jpg" alt=" Wallpaper 10">
+            </div>
+            <div class="info-producto">
+                <h3>F40 Villa.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 12 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Lake Maggiore.jpg" alt=" Wallpaper 11">
+            </div>
+            <div class="info-producto">
+                <h3>Lake Maggiore.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 13 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Evolution.jpg" alt=" Wallpaper 12">
+            </div>
+            <div class="info-producto">
+                <h3>Evolution.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 14 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Lonely Sailboat.jpg" alt="Impasto Wallpaper 13">
+            </div>
+            <div class="info-producto">
+                <h3>Lonely Sailboat.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 15 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="PJ & Porsche.jpg" alt=" Wallpaper 14">
+            </div>
+            <div class="info-producto">
+                <h3>PJ & Porsche.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 16 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="One Hundred Dollar Bill.jpg" alt=" Wallpaper 15">
+            </div>
+            <div class="info-producto">
+                <h3>One Hundred Dollar Bill.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 17 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Twin Towers.jpg" alt=" Wallpaper 16">
+            </div>
+            <div class="info-producto">
+                <h3>Twin Towers 90's.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 18 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Essentials.jpg" alt="Impasto Wallpaper 17">
+            </div>
+            <div class="info-producto">
+                <h3>Essentials.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 19 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Time Is Money.jpeg" alt="Wallpaper 18">
+            </div>
+            <div class="info-producto">
+                <h3>Time Is Money.</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 20 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Classic 911 In Snow.jpg" alt="Wallpaper 19">
+            </div>
+            <div class="info-producto">
+                <h3>Classic 911 In Snow</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+        <!-- SLOT 21 -->
+        <article class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="Shark.jpg" alt="Impasto Wallpaper 20">
+            </div>
+            <div class="info-producto">
+                <h3>Shark</h3>
+                <div class="detalles">
+                    <span class="resolucion">Mac 4K</span>
+                    <span class="precio">1.99€</span>
+                </div>
+                <a href="#" class="boton-comprar">Buy Now</a>
+            </div>
+        </article>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Vanilla Wallpapers. All rights reserved.</p>
+        <div class="enlaces-legales">
+            <a href="legal.html">Legal Notice</a>
+            <a href="privacidad.html">Privacy Policy</a>
+            <a href="terminos.html">Terms of Sale</a>
+        </div>
+    </footer>
+
+    <script>
+       <!-- CIERRE CENTRALIZADO ANTIRROBO PARA TODAS LAS IMÁGENES Y SUS CAJAS -->
+    
+        document.querySelectorAll('img, .contenedor-imagen').forEach(elemento => {
+            // Mata el menú de clic derecho (Mac/PC)
+            elemento.addEventListener('contextmenu', function(e) {
+                e.preventDefault(); 
+            });
+            // Mata el arrastrar al escritorio
+            elemento.addEventListener('dragstart', function(e) {
+                e.preventDefault(); 
+            });
+            // Mata el menú de dejar calcado el dedo para guardar (iPhone/iPad)
+            elemento.style.webkitTouchCallout = 'none';
+        });
+    </script>
+</body>
+</html>
