@@ -199,8 +199,14 @@
 
     <div id="catalogo" class="catalogo-grid">
         
-        <!-- SLOT 1: THE BUNDLE -->
-        <article class="tarjeta" style="border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);">
+       <!-- SLOT 1: THE BUNDLE -->
+        <article class="tarjeta" style="border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05); position: relative;">
+            
+            <!-- PEGATINA DE MARKETING -->
+            <div style="position: absolute; top: -12px; right: -12px; background: linear-gradient(135deg, #ff2a5f, #ff4d4d); color: white; padding: 6px 14px; border-radius: 100px; font-weight: 800; font-size: 0.9rem; letter-spacing: 1px; box-shadow: 0 10px 20px rgba(255, 42, 95, 0.4); transform: rotate(8deg); z-index: 10;">
+                -62% OFF
+            </div>
+
             <div class="contenedor-imagen">
                 <img src="boundle.jpg" alt="Full Impasto Collection">
             </div>
@@ -208,12 +214,16 @@
                 <h3>The Full Collection.</h3>
                 <div class="detalles">
                     <span class="resolucion" style="color: #fff; font-weight: bold;">20 4K Wallpapers Bundle</span>
-                    <span class="precio">14.99€</span>
+                    
+                    <!-- PRECIO TACHADO Y PRECIO NUEVO -->
+                    <span class="precio" style="display: flex; flex-direction: column; text-align: right; line-height: 1.1;">
+                        <span style="text-decoration: line-through; color: #86868b; font-size: 0.85rem; font-weight: 400;">39.80€</span>
+                        14.99€
+                    </span>
                 </div>
                 <a href="https://buy.stripe.com/4gM14o4AZeKJ4Zg1GPcAo00" class="boton-comprar" style="background-color: #007aff; color: white;">Save 25€ - Get the Bundle</a>
             </div>
         </article>
-
         <!-- SLOT 2 -->
         <article class="tarjeta">
             <div class="contenedor-imagen">
